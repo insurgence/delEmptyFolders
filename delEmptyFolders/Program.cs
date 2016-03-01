@@ -2,9 +2,8 @@
 using System.IO;
 using System.Diagnostics;
 using System.Security.AccessControl;
-using System.Security.Principal;
-
 using System.Collections.Generic;
+
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,7 +18,7 @@ namespace delEmptyFolders
         {
             var watch = Stopwatch.StartNew();
 
-            processDirectory(@"F:\");
+            processDirectory(@"C:\");
             Console.WriteLine(count);
 
             watch.Stop();
@@ -37,7 +36,7 @@ namespace delEmptyFolders
             {
                 try
                 {
-                    System.Security.AccessControl.DirectorySecurity ds = Directory.GetAccessControl(directory);
+                    DirectorySecurity ds = Directory.GetAccessControl(directory);
                     processDirectory(directory);
                     if (Directory.GetFiles(directory).Length == 0 &&
                         Directory.GetDirectories(directory).Length == 0)
