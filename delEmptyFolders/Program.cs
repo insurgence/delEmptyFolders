@@ -19,7 +19,7 @@ namespace delEmptyFolders
         {
             var watch = Stopwatch.StartNew();
 
-            processDirectory(@"D:\");
+            processDirectory(@"F:\");
             Console.WriteLine(count);
 
             watch.Stop();
