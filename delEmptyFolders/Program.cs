@@ -17,11 +17,16 @@ namespace delEmptyFolders
         {
             var watch = Stopwatch.StartNew();
 
-            // my code
+            processDirectory(@"D:\Файлы");
+            Console.WriteLine(count);
 
             watch.Stop();
             var elapsedMs = watch.ElapsedMilliseconds;
             Console.WriteLine(elapsedMs);
+
+            File.WriteAllLines(@"C:\empty.txt", list);
+            Console.WriteLine("end of task...");
+            Console.ReadLine();
         }
 
         private static void processDirectory(string startLocation)
